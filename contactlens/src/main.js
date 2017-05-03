@@ -4,11 +4,13 @@ import App from './App'
 import Vue from 'vue'
 import router from './router'
 import vueResource from 'vue-resource'
+import Vuetify from 'vuetify'
 
 Vue.config.productionTip = false
 Vue.config.debug = true 
 
 Vue.use(vueResource)
+Vue.use(Vuetify)
 
 /* eslint-disable no-new */
 new Vue({
@@ -16,5 +18,6 @@ new Vue({
   router,
   template: '<App/>',
   components: { 
-    App  }
+    App  
+  }
 })
