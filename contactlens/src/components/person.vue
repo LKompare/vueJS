@@ -7,7 +7,7 @@
       <div>Mass: {{person.mass}}</div>
       <div>Hair Color: {{person.hair_color}}</div>
       <br/> -->
-      <router-link to="people">Back to people</router-link>
+      <router-link to="/">Back to people</router-link>
     </div>
 </template>
 
@@ -15,8 +15,10 @@
 <script>
 
 export default {
-  name: "PersonDetails"
+  name: "PersonDetails",
   props: ["person"],
 
 }
+
+</script>
 

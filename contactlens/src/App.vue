@@ -1,8 +1,7 @@
 <template>
-  <div id='app'>
-    <h1>Hi!</h1>
-    <people :people="people">
-    </people>
+  <div>
+      <h1>Hi!</h1>
+      <router-view :people="people"></router-view>
   </div>
 </template>
 
@@ -21,8 +20,19 @@ export default {
   data () {
     return {
       people: [],
-      person: ''
     }
+  },
+  methods: {
+    fetchPeople(){
+      var api = `https://swapi.co/api/people/`
+      this.$http.get(api).then(function(response){
+        this.people = response.body.results;
+        console.log(this.$router, this.$route)
+      })
+    }
+  },
+  created(){
+    this.fetchPeople()
   }
 }
 </script>
